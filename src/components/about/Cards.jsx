@@ -37,23 +37,27 @@ const EducationCard = memo(
   }
 );
 
-const CoreCompetencyCard = memo(({ icon, title, description, color,delay }) => {
-  return (
-    <div className={`bg-white p-6 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 group relative transition-all duration-300 opacity-0 animate-fade-in delay-[${delay}ms]`}>
-      <div className="flex flex-col items-center justify-center text-center">
-        <FontAwesomeIcon
-          icon={icon}
-          className={`text-4xl sm:text-5xl ${color} mb-4 sm:mb-5 transform hover:rotate-12 transition-transform`}
-        />
-        <h4 className="text-lg sm:text-xl font-bold mb-3 text-gray-800">
-          {title}
-        </h4>
-        <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-          {description}
-        </p>
+const CoreCompetencyCard = memo(
+  ({ icon, title, description, colorText, delay }) => {
+    return (
+      <div
+        className={`bg-white p-6 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 group relative transition-all duration-300 opacity-0 animate-fade-in delay-[${delay}ms]`}
+      >
+        <div className="flex flex-col items-center justify-center text-center">
+          <FontAwesomeIcon
+            icon={icon}
+            className={` ${colorText} text-4xl sm:text-5xl mb-4 sm:mb-5 transform hover:rotate-12 transition-transform`}
+          />
+          <h4 className="text-lg sm:text-xl font-bold mb-3 text-gray-800">
+            {title}
+          </h4>
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+            {description}
+          </p>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
 export { SkillCard, EducationCard, CoreCompetencyCard };

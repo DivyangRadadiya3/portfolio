@@ -1,11 +1,37 @@
 {
-  "navItem": ["home", "about", "experience", "projects", "contact"],
+  "navItem": [
+    "home",
+    "about",
+    "experience",
+    "projects",
+    "contact"
+  ],
   "skills": [
-    { "id": 1, "label": "React", "colorClass": "bg-react-blue" },
-    { "id": 2, "label": "JavaScript", "colorClass": "bg-javascript-yellow" },
-    { "id": 3, "label": "HTML5", "colorClass": "bg-html5-orange" },
-    { "id": 4, "label": "CSS3", "colorClass": "bg-css3-blue" },
-    { "id": 5, "label": "Git", "colorClass": "bg-git-orange" }
+    {
+      "id": 1,
+      "label": "React",
+      "colorClass": "bg-react-blue"
+    },
+    {
+      "id": 2,
+      "label": "JavaScript",
+      "colorClass": "bg-javascript-yellow"
+    },
+    {
+      "id": 3,
+      "label": "HTML5",
+      "colorClass": "bg-html5-orange"
+    },
+    {
+      "id": 4,
+      "label": "CSS3",
+      "colorClass": "bg-css3-blue"
+    },
+    {
+      "id": 5,
+      "label": "Git",
+      "colorClass": "bg-git-orange"
+    }
   ],
   "coreCompetencies": [
     {
@@ -71,7 +97,10 @@
       "title": "E-Learning Website",
       "description": "An interactive e-learning platform offering a user-friendly interface and multimedia content delivery.",
       "image": "https://storage.googleapis.com/a1aa/image/sample-portfolio.jpg",
-      "techStack": ["React", "Tailwind CSS"],
+      "techStack": [
+        "React",
+        "Tailwind CSS"
+      ],
       "repoLink": "#",
       "demoLink": "#"
     },
@@ -79,9 +108,29 @@
       "title": "Portfolio Website",
       "description": "A modern portfolio website showcasing projects and skills.",
       "image": "https://storage.googleapis.com/a1aa/image/sample-portfolio.jpg",
-      "techStack": ["React", "Tailwind CSS"],
+      "techStack": [
+        "React",
+        "Tailwind CSS"
+      ],
       "repoLink": "#",
       "demoLink": "#"
+    }
+  ],
+  "contactInfo": [
+    {
+      "icon": "faEnvelope",
+      "label": "Email",
+      "value": "example@gmail.com"
+    },
+    {
+      "icon": "faPhone",
+      "label": "Phone",
+      "value": "0123456789"
+    },
+    {
+      "icon": "faLocationArrow",
+      "label": "Location",
+      "value": "Surat, Gujarat"
     }
   ]
 }

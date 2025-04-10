@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 const HeroSection = memo(({ handleSmoothScroll }) => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 font-sans ">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 font-sans ">
       <div className="max-w-6xl w-full gap-10 p-4 sm:p-6 lg:p-8">
         <p className="text-lg sm:text-xl font-medium mb-2 text-center sm:text-left">Hello I'm</p>
         <h1 className="text-[#4cb133] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-center sm:text-left animate-fade-up">

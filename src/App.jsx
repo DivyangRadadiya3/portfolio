@@ -7,7 +7,9 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
-import data from "./data.json"; // Import the JSON data
+import data from "./data.json"; // Import the JSON data containing skills, education, etc.
+
+// Lazy load components for better performance
 const Header = lazy(() => import("./components/Header"));
 const Footer = lazy(() => import("./components/Footer"));
 const HeroSection = lazy(() => import("./components/HeroSection"));
@@ -38,124 +40,30 @@ import {
 
 // Create a mapping of icon names to actual icons
 const iconMapping = {
-  faReact: faReact,
-  faJs: faJs,
-  faHtml5: faHtml5,
-  faCss3Alt: faCss3Alt,
-  faGitAlt: faGitAlt,
-  faBolt: faBolt,
-  faRocket: faRocket,
-  faLightbulb: faLightbulb,
-  faChartLine: faChartLine,
-  faGraduationCap: faGraduationCap,
+  faReact,
+  faJs,
+  faHtml5,
+  faCss3Alt,
+  faGitAlt,
+  faBolt,
+  faRocket,
+  faLightbulb,
+  faChartLine,
+  faGraduationCap,
 };
 
+// Main App component
 const App = memo(() => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
   const [loading, setLoading] = useState(true); // Loading state
-  const [loadedImages, setLoadedImages] = useState({}); // Initialize as an empty object
+  const [loadedImages, setLoadedImages] = useState({}); // Track loaded images
 
-  // const navItem = ["home", "about", "experience", "projects", "contact"];
-
-  // const skills = [
-  //   { icon: faReact, label: "React", color: "#61DAFB" },
-  //   { icon: faJs, label: "JavaScript", color: "#F7DF1E" },
-  //   { icon: faHtml5, label: "HTML5", color: "#E34F26" },
-  //   { icon: faCss3Alt, label: "CSS3", color: "#1572B6" },
-  //   { icon: faGitAlt, label: "Git", color: "#F05032" },
-  // ];
-
-  // const coreCompetencies = [
-  //   {
-  //     icon: faBolt,
-  //     title: "Problem Solving",
-  //     description:
-  //       "Strong analytical skills in debugging and optimizing applications.",
-  //     color: "text-indigo-600",
-  //   },
-  //   {
-  //     icon: faRocket,
-  //     title: "Modern Technologies",
-  //     description:
-  //       "Staying updated with modern frameworks, best practices, and cloud technologies for efficient development.",
-  //     color: "text-amber-500",
-  //   },
-  //   {
-  //     icon: faLightbulb,
-  //     title: "Responsive Design",
-  //     description:
-  //       "Skilled in creating responsive and user-friendly interfaces using CSS frameworks like Tailwind CSS and Bootstrap.",
-  //     color: "text-emerald-500",
-  //   },
-  //   {
-  //     icon: faChartLine,
-  //     title: "Adaptability",
-  //     description:
-  //       "Ability to quickly learn and adapt to new technologies and methodologies, ensuring continuous improvement.",
-  //     color: "text-blue-500",
-  //   },
-  // ];
-
-  // const education = [
-  //   {
-  //     title: "Bachelor of Computer Application",
-  //     icon: faGraduationCap,
-  //     university: "S.V.Patel College",
-  //     duration: "2021 - 2024",
-  //     description:
-  //       "Specialized in Frontend development with a focus on web technologies and distributed systems. Graduated with honors.",
-  //   },
-  // ];
-
-  // const experience = [
-  //   {
-  //     number: 1,
-  //     title: "Web Developer Intern",
-  //     company: "CodexByte",
-  //     duration: "6 months",
-  //     points: [
-  //       "Worked on web application projects using React.js and Tailwind CSS.",
-  //       "Improved application performance through optimization techniques.",
-  //       "Participated in code reviews and collaborated with team members to ensure high-quality code.",
-  //     ],
-  //   },
-  //   {
-  //     number: 2,
-  //     title: "Junior React Developer",
-  //     company: "HK DigiVerse & IT Consultancy",
-  //     duration: "3 months",
-  //     points: [
-  //       "Worked on product-based applications, focusing on scalable and user-centric designs.",
-  //       "Designed and developed core features to improve functionality and usability.",
-  //       "Collaborated with the product team to define requirements and deliver timely solutions.",
-  //     ],
-  //   },
-  // ];
-
-  // const projectData = [
-  //   {
-  //     title: "E-Learning Website",
-  //     description:
-  //       "An interactive e-learning platform offering a user-friendly interface and multimedia content delivery.",
-  //     image: "https://storage.googleapis.com/a1aa/image/sample-portfolio.jpg",
-  //     techStack: ["React", "Tailwind CSS"],
-  //     repoLink: "https://github.com/example/elearning",
-  //     demoLink: "https://elearning-demo.com",
-  //   },
-  //   {
-  //     title: "Portfolio Website",
-  //     description: "A modern portfolio website showcasing projects and skills.",
-  //     image: "https://storage.googleapis.com/a1aa/image/sample-portfolio.jpg",
-  //     techStack: ["React", "Tailwind CSS"],
-  //     repoLink: "https://github.com/example/portfolio",
-  //     demoLink: "https://portfolio-demo.com",
-  //   },
-  // ];
-
+  // Function to handle image load
   const handleImageLoad = useCallback((imageId) => {
     setLoadedImages((prev) => ({ ...prev, [imageId]: true }));
   }, []);
 
+  // Function for smooth scrolling
   const handleSmoothScroll = useCallback((e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
@@ -165,6 +73,7 @@ const App = memo(() => {
     }
   }, []);
 
+  // Memoized skills data
   const skills = useMemo(
     () =>
       data.skills.map((skill) => ({
@@ -192,8 +101,8 @@ const App = memo(() => {
     [data.education]
   );
 
+  // Simulate loading time
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false after 2 seconds
     }, 2000);
@@ -202,9 +111,9 @@ const App = memo(() => {
   }, []);
 
   return (
-    <main className="min-h-screen text-center bg-[#f8f6f6] antialiased">
+    <main className="min-h-screen text-center bg-[#f8f6f6] font-sans antialiased">
       {loading ? (
-        <Laoder />
+        <Laoder /> // Show loader while loading
       ) : (
         <>
           <Header
@@ -214,13 +123,12 @@ const App = memo(() => {
             handleSmoothScroll={handleSmoothScroll}
           />
           <Suspense fallback={<div>Loading...</div>}>
+            <HeroSection handleSmoothScroll={handleSmoothScroll} />
             <AboutSection
               skills={skills}
               coreCompetencies={coreCompetencies}
               education={education}
             />
-            <HeroSection handleSmoothScroll={handleSmoothScroll} />
-
             <ExperienceSection experience={data.experience} />
             <ProjectsSection
               projectData={data.projectData}

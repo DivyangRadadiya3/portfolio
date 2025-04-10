@@ -25,7 +25,7 @@ const AboutSection = memo(({ skills, coreCompetencies, education }) => {
             functional websites that make a difference.
           </p>
           {/* Skills */}
-          <Suspense fallback={<div>Loading Skills...</div>}>
+          <Suspense fallback={<div className="flex justify-center items-center h-32 text-lg text-gray-500">Loading Skills...</div>}>
             <Skills skills={skills} />
           </Suspense>
           <div className="mt-4 flex justify-center mx-auto">
@@ -43,12 +43,12 @@ const AboutSection = memo(({ skills, coreCompetencies, education }) => {
         </div>
 
         {/* Core Competencies */}
-        <Suspense fallback={<div>Loading Core Competencies...</div>}>
+        <Suspense fallback={<div className="flex justify-center items-center h-32 text-lg text-gray-500">Loading Core Competencies...</div>}>
           <CoreCompetencies coreCompetencies={coreCompetencies} />
         </Suspense>
 
         {/* Education */}
-        <Suspense fallback={<div>Loading Education...</div>}>
+        <Suspense fallback={<div className="flex justify-center items-center h-32 text-lg text-gray-500">Loading Education...</div>}>
           <Education education={education} />
         </Suspense>
       </div>

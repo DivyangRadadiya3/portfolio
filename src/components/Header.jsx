@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 
 const Header = memo(({ isMenuOpen, setIsMenuOpen, navItem, activeNavItem, handleSmoothScroll }) => {
+  
   return (
     <header className="fixed w-full z-50 bg-white/80 rounded-b-xl backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

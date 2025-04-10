@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useState, useMemo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
@@ -6,7 +6,50 @@ import {
   faLocationArrow,
 } from "@fortawesome/free-solid-svg-icons";
 
+import data from "../data.json";
+
+
+const iconMapping = {
+  faEnvelope,
+  faPhone,
+  faLocationArrow,
+};
+
+
+
 const ContactSection = memo(() => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const contactInfo = useMemo(
+    () =>
+      data.contactInfo.map((contact) => ({
+        ...contact,
+        icon: iconMapping[contact.icon], // Map icon names to actual icons
+      })),
+    [data.contactInfo]
+  );
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Thank you for reaching out! Your message has been received");
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+  };
+
   return (
     <section
       id="contact"
@@ -25,98 +68,43 @@ const ContactSection = memo(() => {
             <h2 className="text-2xl font-medium mb-8">Contact Information</h2>
 
             <div className="space-y-8 text-left">
-              <div className="flex items-center gap-4 group">
-                <div className="p-4">
-                  <FontAwesomeIcon
-                    icon={faEnvelope}
-                    className="h-6 w-6 text-blue-400"
-                  />
+              {contactInfo.map(({ icon, label, value }) => (
+                <div className="flex items-center gap-4 group" key={label}>
+                  <div className="p-4">
+                    <FontAwesomeIcon icon={icon} className="h-6 w-6 text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="text-gray-400">{label}</p>
+                    <p>{value}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-gray-400">Email</p>
-                  <p>example@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 group">
-                <div className="p-4">
-                  <FontAwesomeIcon
-                    icon={faPhone}
-                    className="h-6 w-6 text-blue-400"
-                  />
-                </div>
-                <div>
-                  <p className="text-gray-400">Phone</p>
-                  <p>0123456789</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-4 group">
-                <div className="p-4">
-                  <FontAwesomeIcon
-                    icon={faLocationArrow}
-                    className="h-6 w-6 text-blue-400"
-                  />
-                </div>
-                <div>
-                  <p className="text-gray-400">Location</p>
-                  <p>Surat, Gujarat</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
           <div className="bg-white border border-gray-200 p-8 rounded-3xl shadow-xl w-full md:w-1/2">
-            <form>
-              <div className="mb-5">
-                <label
-                  htmlFor="name"
-                  className="block text-gray-700 dark:text-white mb-1"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Full Name"
-                  autoComplete="name"
-                  className="w-full rounded-lg border focus:outline-none focus:border-blue-500 dark:focus:border-white py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none"
-                />
-              </div>
-              <div className="mb-5">
-                <label
-                  htmlFor="phone"
-                  className="block text-gray-700 dark:text-white mb-1"
-                >
-                  Phone Number
-                </label>
-                <input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  placeholder="Enter your phone number"
-                  autoComplete="tel"
-                  className="w-full rounded-lg border focus:outline-none focus:border-blue-500 dark:focus:border-white py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none"
-                />
-              </div>
-              <div className="mb-5">
-                <label
-                  htmlFor="email"
-                  className="block text-gray-700 dark:text-white mb-1"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Enter your email"
-                  autoComplete="email"
-                  className="w-full rounded-lg border focus:outline-none focus:border-blue-500 dark:focus:border-white py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none"
-                />
-              </div>
-
+            <form onSubmit={handleSubmit}>
+              {[
+                { name: "name", label: "Full Name", type: "text", placeholder: "Full Name", autoComplete: "name" },
+                { name: "phone", label: "Phone Number", type: "text", placeholder: "Enter your phone number", autoComplete: "tel" },
+                { name: "email", label: "Email Address", type: "email", placeholder: "Enter your email", autoComplete: "email" },
+              ].map(({ name, label, type, placeholder, autoComplete }) => (
+                <div className="mb-5" key={name}>
+                  <label htmlFor={name} className="block text-gray-700 dark:text-white mb-1">
+                    {label}
+                  </label>
+                  <input
+                    type={type}
+                    name={name}
+                    id={name}
+                    placeholder={placeholder}
+                    autoComplete={autoComplete}
+                    className="w-full rounded-lg border focus:outline-none focus:border-blue-500 dark:focus:border-white py-2 px-3 dark:bg-gray-700 dark:text-white dark:border-none"
+                    value={formData[name]}
+                    onChange={handleChange}
+                  />
+                </div>
+              ))}
               <div>
                 <button className="shadow-[0.625rem_0.625rem_0.875rem_0_rgb(225,226,228),-0.5rem_-0.5rem_1.125rem_0_rgb(255,255,255)] w-full rounded-xl bg-[#5d5c6b] py-3 px-8 text-center text-base font-semibold text-white outline-none">
                   Submit

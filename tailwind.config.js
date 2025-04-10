@@ -11,11 +11,6 @@ module.exports = {
         secondary: "#FF6F61",
         background: "#f5f5f5",
         text: "#333333",
-        "react-blue": '#61DAFB',
-        "javascript-yellow": '#F7DF1E',
-        "html5-orange": '#E34F26',
-        "css3-blue": '#1572B6',
-        "git-orange": '#F05032',
       },
       animation: {
         "fade-in": "fade-in 3s forwards",
@@ -23,7 +18,7 @@ module.exports = {
         "bounce-up": "bounce-up 3s forwards",
         "slide-right": "slide-right 3s forwards",
         "slideInLeft": "slideInLeft 3s forwards",
-        "slideInUp": "slideInUp 3s forwards", // Changed to slideInUp
+        "slideInUp": "slideInUp 3s forwards",
         "zoom-in-up": "zoom-in-up 2s forwards",
         "flip-left": "flip-left 0.5s forwards",
       },
@@ -45,11 +40,11 @@ module.exports = {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(0)" },
         },
-        "slideInLeft": { // Keyframes for slideInLeft
+        "slideInLeft": {
           "0%": { transform: "translateX(-100%)", opacity: "0" },
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
-        "slideInUp": { // Keyframes for slideInUp
+        "slideInUp": {
           "0%": { transform: "translateY(100%)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
