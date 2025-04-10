@@ -15,6 +15,7 @@ const AboutSection = memo(({ skills, coreCompetencies, education }) => {
         >
           <h1 className="mb-2 text-4xl font-medium text-center leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             About Me
+            <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-20 h-[3px] bg-[#5f4dc7] rounded-full"></div>
           </h1>
         </div>
         <div className="mx-auto mt-4 p-4 animate-fade-up">

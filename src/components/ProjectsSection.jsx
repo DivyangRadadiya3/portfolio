@@ -11,6 +11,8 @@ const ProjectsSection = memo(({ projectData, handleImageLoad, loadedImages }) =>
         <div className="mb-20 px-6 md:px-0">
           <h1 className="text-4xl font-medium text-center leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white animate-fade-up">
             My Projects
+            <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-20 h-[3px] bg-[#5f4dc7] rounded-full"></div>
+
           </h1>
           <p className="text-lg text-gray-600 text-center mt-4 animate-fade-up">
             Explore my recent projects and discover what I can do.

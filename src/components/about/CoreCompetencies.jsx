@@ -3,7 +3,7 @@ import { CoreCompetencyCard } from "./Cards"; // Changed to named import
 
 const CoreCompetencies = ({ coreCompetencies }) => {
   return (
-    <div className="mx-auto mt-6 py-4 rounded-t-[6.4rem] shadow-md border border-gray-300">
+    <div className="mx-auto mt-6 py-4 rounded-t-[4.5rem] shadow-md border border-gray-300">
       <h3 className="text-xl text-center font-semibold mb-6 animate-zoom-in-up">
         Core Competencies
       </h3>

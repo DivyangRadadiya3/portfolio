@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 const Footer = memo(() => {
   return (
     <footer className="flex flex-col space-y-3 justify-center py-2 border-t border-gray-200 bg-white dark:bg-gray-900">
-      <div className="flex justify-evenly flex-wrap gap-6 text-gray-500 font-medium">
+      <div className="flex items-center justify-evenly flex-wrap gap-6 text-gray-500 font-medium">
         <h4 className="text-xl font-medium text-center leading-none tracking-tight text-gray-900 md:text-2xl dark:text-white">
           D_Code
         </h4>

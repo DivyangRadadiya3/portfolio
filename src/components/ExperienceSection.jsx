@@ -9,6 +9,8 @@ const ExperienceSection = memo(({ experience }) => {
         <div className="mb-20 px-6 md:px-0 animate-fade-up">
           <h1 className="mb-4 text-4xl font-medium text-center leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             Work Experience
+            <div className="absolute left-1/2 -translate-x-1/2 mt-4 w-20 h-[3px] bg-[#5f4dc7] rounded-full"></div>
+
           </h1>
         </div>
         <div className="space-y-8 animate-fade-in">
