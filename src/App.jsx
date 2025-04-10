@@ -214,12 +214,13 @@ const App = memo(() => {
             handleSmoothScroll={handleSmoothScroll}
           />
           <Suspense fallback={<div>Loading...</div>}>
-            <HeroSection handleSmoothScroll={handleSmoothScroll} />
             <AboutSection
               skills={skills}
               coreCompetencies={coreCompetencies}
               education={education}
             />
+            <HeroSection handleSmoothScroll={handleSmoothScroll} />
+
             <ExperienceSection experience={data.experience} />
             <ProjectsSection
               projectData={data.projectData}

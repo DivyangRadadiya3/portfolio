@@ -15,6 +15,8 @@ const CoreCompetencies = ({ coreCompetencies }) => {
             title={title}
             description={description}
             color={color}
+            delay={index * 300} 
+
           />
         ))}
       </div>

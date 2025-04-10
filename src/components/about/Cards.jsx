@@ -1,13 +1,15 @@
 import React, { memo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const SkillCard = memo(({ label, colorClass }) => {
+const SkillCard = memo(({ label, colorClass, delay }) => {
   return (
-    <div className="flex flex-col items-center group relative animate-fade-up">
-      <div className="px-3 py-2 sm:px-4 bg-green-100 rounded-md shadow-md border border-green-200 transition-transform duration-300 transform hover:scale-110 hover:shadow-lg">
-        <span className="font-semibold">
-          {label}
-        </span>
+    <div
+      className={`flex flex-col items-center group relative transition-all duration-300 opacity-0 animate-slideInLeft delay-[${delay}ms]`}
+    >
+      <div
+        className={`px-3 py-2 sm:px-4 ${colorClass} rounded-md shadow-md border transition-transform duration-300 transform hover:scale-110 hover:shadow-lg`}
+      >
+        <span className="font-semibold">{label}</span>
       </div>
     </div>
   );
@@ -35,9 +37,9 @@ const EducationCard = memo(
   }
 );
 
-const CoreCompetencyCard = memo(({ icon, title, description, color }) => {
+const CoreCompetencyCard = memo(({ icon, title, description, color,delay }) => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-200">
+    <div className={`bg-white p-6 rounded-xl shadow-lg hover:shadow-xl border border-gray-200 group relative transition-all duration-300 opacity-0 animate-fade-in delay-[${delay}ms]`}>
       <div className="flex flex-col items-center justify-center text-center">
         <FontAwesomeIcon
           icon={icon}

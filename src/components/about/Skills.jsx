@@ -7,9 +7,14 @@ const Skills = ({ skills }) => {
       <h3 className="text-xl text-center font-semibold mb-4 animate-zoom-in-up">
         Skills
       </h3>
-      <div className="flex flex-wrap items-center justify-center gap-4 p-4 ">
-        {skills.map(({ id, label, colorClass }) => (
-          <SkillCard key={id} label={label} colorClass={colorClass} />
+      <div className="flex flex-wrap items-center justify-center gap-4 p-4">
+        {skills.map(({ id, label, colorClass }, index) => (
+          <SkillCard
+            key={id}
+            label={label}
+            colorClass={colorClass}
+            delay={index * 300} 
+          />
         ))}
       </div>
     </div>
