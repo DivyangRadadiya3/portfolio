@@ -1,0 +1,87 @@
+{
+  "navItem": ["home", "about", "experience", "projects", "contact"],
+  "skills": [
+    { "id": 1, "label": "React", "colorClass": "bg-react-blue" },
+    { "id": 2, "label": "JavaScript", "colorClass": "bg-javascript-yellow" },
+    { "id": 3, "label": "HTML5", "colorClass": "bg-html5-orange" },
+    { "id": 4, "label": "CSS3", "colorClass": "bg-css3-blue" },
+    { "id": 5, "label": "Git", "colorClass": "bg-git-orange" }
+  ],
+  "coreCompetencies": [
+    {
+      "icon": "faBolt",
+      "title": "Problem Solving",
+      "description": "Strong analytical skills in debugging and optimizing applications.",
+      "color": "text-indigo-600"
+    },
+    {
+      "icon": "faRocket",
+      "title": "Modern Technologies",
+      "description": "Staying updated with modern frameworks, best practices, and cloud technologies for efficient development.",
+      "color": "text-amber-500"
+    },
+    {
+      "icon": "faLightbulb",
+      "title": "Responsive Design",
+      "description": "Skilled in creating responsive and user-friendly interfaces using CSS frameworks like Tailwind CSS and Bootstrap.",
+      "color": "text-emerald-500"
+    },
+    {
+      "icon": "faChartLine",
+      "title": "Adaptability",
+      "description": "Ability to quickly learn and adapt to new technologies and methodologies, ensuring continuous improvement.",
+      "color": "text-blue-500"
+    }
+  ],
+  "education": [
+    {
+      "title": "Bachelor of Computer Application",
+      "icon": "faGraduationCap",
+      "university": "S.V.Patel College",
+      "duration": "2021 - 2024",
+      "description": "Specialized in Frontend development with a focus on web technologies and distributed systems. Graduated with honors."
+    }
+  ],
+  "experience": [
+    {
+      "number": 1,
+      "title": "Web Developer Intern",
+      "company": "CodexByte",
+      "duration": "6 months",
+      "points": [
+        "Worked on web application projects using React.js and Tailwind CSS.",
+        "Improved application performance through optimization techniques.",
+        "Participated in code reviews and collaborated with team members to ensure high-quality code."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Junior React Developer",
+      "company": "HK DigiVerse & IT Consultancy",
+      "duration": "3 months",
+      "points": [
+        "Worked on product-based applications, focusing on scalable and user-centric designs.",
+        "Designed and developed core features to improve functionality and usability.",
+        "Collaborated with the product team to define requirements and deliver timely solutions."
+      ]
+    }
+  ],
+  "projectData": [
+    {
+      "title": "E-Learning Website",
+      "description": "An interactive e-learning platform offering a user-friendly interface and multimedia content delivery.",
+      "image": "https://storage.googleapis.com/a1aa/image/sample-portfolio.jpg",
+      "techStack": ["React", "Tailwind CSS"],
+      "repoLink": "#",
+      "demoLink": "#"
+    },
+    {
+      "title": "Portfolio Website",
+      "description": "A modern portfolio website showcasing projects and skills.",
+      "image": "https://storage.googleapis.com/a1aa/image/sample-portfolio.jpg",
+      "techStack": ["React", "Tailwind CSS"],
+      "repoLink": "#",
+      "demoLink": "#"
+    }
+  ]
+}
