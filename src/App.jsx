@@ -202,7 +202,7 @@ const App = memo(() => {
   }, []);
 
   return (
-    <main className="min-h-screen text-center bg-[#F7F7F7] antialiased">
+    <main className="min-h-screen text-center bg-[#f8f6f6] antialiased">
       {loading ? (
         <Laoder />
       ) : (

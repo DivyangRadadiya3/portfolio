@@ -2,7 +2,7 @@ import React, { memo } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faBarsStaggered } from '@fortawesome/free-solid-svg-icons';
 
-const Header = memo(({ isMenuOpen, setIsMenuOpen, navItem, handleSmoothScroll }) => {
+const Header = memo(({ isMenuOpen, setIsMenuOpen, navItem, activeNavItem, handleSmoothScroll }) => {
   return (
     <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +34,7 @@ const Header = memo(({ isMenuOpen, setIsMenuOpen, navItem, handleSmoothScroll })
                         handleSmoothScroll(e, item);
                         setIsMenuOpen(false);
                       }}
-                      className="text-gray-700  transition-colors duration-300 relative group "
+                      className={`text-gray-700 transition-colors duration-300 relative group ${activeNavItem === item ? 'font-bold text-indigo-600' : ''}`}
                       aria-label={`Navigate to ${item.charAt(0).toUpperCase() + item.slice(1)}`}
                     >
                       <span className="block">{item.charAt(0).toUpperCase() + item.slice(1)}</span>
@@ -52,7 +52,7 @@ const Header = memo(({ isMenuOpen, setIsMenuOpen, navItem, handleSmoothScroll })
                 key={item}
                 href={`#${item}`}
                 onClick={(e) => handleSmoothScroll(e, item)}
-                className="text-gray-700 hover:text-indigo-600 relative group transition-colors duration-300"
+                className={`text-gray-700 hover:text-indigo-600 relative group transition-colors duration-300 ${activeNavItem === item ? 'font-bold text-indigo-600' : ''}`}
                 aria-label={`Navigate to ${item.charAt(0).toUpperCase() + item.slice(1)}`}
               >
                 {item.charAt(0).toUpperCase() + item.slice(1)}
