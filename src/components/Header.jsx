@@ -24,21 +24,21 @@ const Header = memo(({ isMenuOpen, setIsMenuOpen, navItem, handleSmoothScroll })
             </button>
           </div>
           {isMenuOpen && (
-            <nav className="absolute top-16 left-0 w-full bg-white rounded-b-xl shadow-xl">
-              <ul className="flex flex-col items-start space-y-4 p-4">
+            <nav className="absolute top-16 left-0 w-full bg-white rounded-b-2xl shadow-xl">
+              <ul className="flex flex-col items-center space-y-4 text-left p-4">
                 {navItem.map((item) => (
-                  <li key={item}>
+                  <li key={item} className="relative group w-full">
                     <a
                       href={`#${item}`}
                       onClick={(e) => {
                         handleSmoothScroll(e, item);
                         setIsMenuOpen(false);
                       }}
-                      className="text-gray-700 transition-colors duration-300 relative group"
+                      className="text-gray-700  transition-colors duration-300 relative group "
                       aria-label={`Navigate to ${item.charAt(0).toUpperCase() + item.slice(1)}`}
                     >
                       <span className="block">{item.charAt(0).toUpperCase() + item.slice(1)}</span>
-                      <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute -left-2 top-1/2 transform -translate-y-1/2 h-full w-1 bg-indigo-600 rounded-r-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a>
                   </li>
                 ))}

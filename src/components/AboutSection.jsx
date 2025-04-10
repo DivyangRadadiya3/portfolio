@@ -18,9 +18,7 @@ const AboutSection = memo(({ skills, coreCompetencies, education }) => {
           </h1>
         </div>
         <div className="mx-auto mt-4 p-4 animate-fade-up">
-        
-          <p className="text-lg text-left text-ellipsis font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
-        
+          <p className="text-lg text-left font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
             I am a skilled web developer with expertise in React, JavaScript,
             and modern web technologies. I love creating beautiful and
             functional websites that make a difference.
@@ -42,6 +40,7 @@ const AboutSection = memo(({ skills, coreCompetencies, education }) => {
             </button>
           </div>
         </div>
+        
 
         {/* Core Competencies */}
         <Suspense fallback={<div>Loading Core Competencies...</div>}>

@@ -16,7 +16,7 @@ const SkillCard = memo(({ label, colorClass }) => {
 const EducationCard = memo(
   ({ title, icon, university, duration, description }) => {
     return (
-      <div className="bg-gradient-to-r from-green-500 to-green-400 p-6 rounded-xl shadow-lg hover:bg-gradient-to-r hover:from-indigo-600 hover:to-purple-400">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-400 p-6 rounded-xl shadow-lg hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-500">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
           <h4 className="text-2xl font-bold text-white mb-2 md:mb-0">
             {title}
@@ -37,7 +37,7 @@ const EducationCard = memo(
 
 const CoreCompetencyCard = memo(({ icon, title, description, color }) => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-100">
+    <div className="bg-white p-6 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl border border-gray-200">
       <div className="flex flex-col items-center justify-center text-center">
         <FontAwesomeIcon
           icon={icon}

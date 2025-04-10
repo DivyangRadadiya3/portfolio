@@ -20,7 +20,7 @@ const ProjectsSection = memo(({ projectData, handleImageLoad, loadedImages }) =>
           {projectData.map((value, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg flex flex-col"
+              className="bg-white p-6 rounded-xl shadow-lg flex flex-col border border-gray-200"
             >
               <div className="relative overflow-hidden rounded-lg mb-6">
                 {!loadedImages[`project-${index}`] && (
@@ -42,7 +42,7 @@ const ProjectsSection = memo(({ projectData, handleImageLoad, loadedImages }) =>
                 {value.techStack.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm"
+                    className="px-3 py-1 bg-gray-100 border border-gray-200 text-slate-700 rounded-full text-sm"
                   >
                     {tech}
                   </span>

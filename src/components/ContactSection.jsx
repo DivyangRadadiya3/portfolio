@@ -10,7 +10,7 @@ const ContactSection = memo(() => {
   return (
     <section
       id="contact"
-      className="pb-16 pt-24 shadow-md border border-gray-300 rounded-tr-[14.5rem]"
+      className="pb-16 pt-24 shadow-md border border-gray-300 rounded-tr-[14.5rem] sm:rounded-tr-[10rem] md:rounded-tr-[12rem] lg:rounded-tr-[14.5rem]"
     >
       <div className="px-4 mx-auto">
         <h1 className="text-5xl font-medium text-center text-black mb-4 animate-fade-up">
@@ -21,7 +21,7 @@ const ContactSection = memo(() => {
         </p>
 
         <div className="flex flex-col md:flex-row gap-8 w-full animate-fade-in">
-          <div className="bg-white p-8 rounded-3xl shadow-xl w-full md:w-1/2">
+          <div className="bg-white border border-gray-200 p-8 rounded-3xl shadow-xl w-full md:w-1/2">
             <h2 className="text-2xl font-medium mb-8">Contact Information</h2>
 
             <div className="space-y-8 text-left">
@@ -66,7 +66,7 @@ const ContactSection = memo(() => {
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-3xl shadow-xl w-full md:w-1/2">
+          <div className="bg-white border border-gray-200 p-8 rounded-3xl shadow-xl w-full md:w-1/2">
             <form>
               <div className="mb-5">
                 <label

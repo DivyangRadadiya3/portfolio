@@ -15,19 +15,19 @@ const ExperienceSection = memo(({ experience }) => {
           {experience.map((value, index) => (
             <div
               key={index}
-              className="bg-white mx-auto mt-6 p-6 rounded-lg shadow-[inset_0rem_0.2rem_0.4rem_0_rgb(0,0,0,0.1)] hover:bg-slate-50 transition-all duration-300 border border-gray-300"
+              className="relative bg-white mx-auto mt-6 p-6 rounded-lg shadow-[inset_0rem_0.2rem_0.4rem_0_rgb(0,0,0,0.1)] hover:bg-slate-50 transition-all duration-300 border border-gray-300 overflow-hidden"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <div className="flex flex-col md:flex-row items-center gap-4 mb-4">
+                <div className="absolute left-0 -top-1 w-8 h-8 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-r-full flex items-center justify-center text-white font-bold text-xl">
                   {value.number}
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 text-center md:text-left">
                   <h3 className="text-xl font-bold text-slate-800">
                     {value.title}
                   </h3>
                   <p className="text-slate-600">{value.company}</p>
                 </div>
-                <span className="ml-auto px-4 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
+                <span className="mt-2 md:mt-0 md:ml-auto px-4 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
                   {value.duration}
                 </span>
               </div>
@@ -38,7 +38,7 @@ const ExperienceSection = memo(({ experience }) => {
                       icon={faArrowRight}
                       className="text-indigo-600 mt-1"
                     />
-                    <span className="text-slate-700">{point}</span>
+                    <span className="text-slate-700 text-left">{point}</span>
                   </li>
                 ))}
               </ul>
