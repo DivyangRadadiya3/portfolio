@@ -46,7 +46,7 @@ const CoreCompetencyCard = memo(
         <div className="flex flex-col items-center justify-center text-center">
           <FontAwesomeIcon
             icon={icon}
-            className={` ${colorText} text-4xl sm:text-5xl mb-4 sm:mb-5 transform hover:rotate-12 transition-transform`}
+            className={`  ${colorText}  text-4xl sm:text-5xl mb-4 sm:mb-5 transform hover:rotate-12 transition-transform`}
           />
           <h4 className="text-lg sm:text-xl font-bold mb-3 text-gray-800">
             {title}
