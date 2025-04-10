@@ -29,19 +29,18 @@ const AboutSection = memo(({ skills, coreCompetencies, education }) => {
             <Skills skills={skills} />
           </Suspense>
           <div className="mt-4 flex justify-center mx-auto">
-            <button
-              onClick={() =>
-                window.open("/public/Divyang_M._Radadiya.pdf", "_blank")
-              }
+            <a
+              href="/public/Divyang_M._Radadiya.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-md px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-md hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 transform hover:shadow-lg"
               aria-label="Resume"
             >
               <FontAwesomeIcon icon={faDownload} className="mr-2" />
               Resume
-            </button>
+            </a>
           </div>
         </div>
-        
 
         {/* Core Competencies */}
         <Suspense fallback={<div>Loading Core Competencies...</div>}>
